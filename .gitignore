@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+venv/
+.venv/
+*.egg-info/
+
+# SQLite DB 파일 - Git과 공개 경로에서 제외
+data/
+*.db
+*.sqlite
+*.sqlite3

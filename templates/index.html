@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메모장</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>📝 메모장</h1>
+      <p class="subtitle">Flask + SQLite로 동작하는 메모 서비스예요</p>
+    </header>
+
+    <section class="note-form-section">
+      <form id="note-form">
+        <input type="hidden" id="note-id" value="">
+        <input type="text" id="note-title" placeholder="제목을 입력하세요" required maxlength="200">
+        <textarea id="note-content" placeholder="내용을 입력하세요" rows="4"></textarea>
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="btn btn-primary">추가하기</button>
+          <button type="button" id="cancel-btn" class="btn btn-secondary" hidden>취소</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="note-list-section">
+      <div class="list-header">
+        <h2>메모 목록</h2>
+        <span id="note-count" class="note-count">0개</span>
+      </div>
+      <div id="status-message" class="status-message" hidden></div>
+      <ul id="note-list" class="note-list"></ul>
+      <p id="empty-message" class="empty-message" hidden>아직 작성된 메모가 없어요. 위에서 첫 메모를 추가해 보세요!</p>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
